@@ -22,12 +22,12 @@ void print_thread_id(int id) {
 
 int main()
 {
-	std::thread threads[10];
+	std::thread arrayOfThreads[10];
 	// spawn 10 threads:
 	for (int i = 0; i < 10; ++i)
-		threads[i] = std::thread(print_thread_id, i + 1);
+		arrayOfThreads[i] = std::thread(print_thread_id, i + 1);
 
-	for (auto& th : threads) th.join();
+	for (auto& th : arrayOfThreads) th.join();
 	system("pause");
 	return 0;
 }
