@@ -5,6 +5,8 @@
 #include <iostream>       // std::cout
 #include <thread>         // std::thread
 #include <mutex>          // std::mutex
+#include <fstream>
+#include <string>
 
 std::mutex mtx;           // mutex for critical section
 
@@ -14,6 +16,9 @@ void threadID(int id) {
 	std::cout << "thread #" << id << '\n';
 	for (int i = 0; i < 10; ++i)
 	{
+		std::ofstream myfile;
+		///std::string filename = ("Thread%i.txt", i);
+		myfile.open("Thread%d.txt",i);
 		std::cout << "Thread Loop Test: " << i << " ." << std::endl;
 		system("pause");
 	}
